@@ -1,6 +1,8 @@
-# my-notes
-
-**Fetching react, react-dom from cdn\***
+&nbsp;&nbsp;&nbsp;[![My Skills](https://skillicons.dev/icons?i=react)](https://skillicons.dev) 
+ 
+MY-NOTES
+<hr>
+Fetching react, react-dom from cdn\***
 
 ```javascript
 <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
