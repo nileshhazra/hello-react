@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-// const heading = React.createElement('h1', { id: 'heading' }, 'hello react');
+// React Element
+const heading = <h3 className='heading'>hello react</h3>;
 
-// JSX - transpiled before it reaches the JS Engine in browser (Parcle->Babel)
-// jSX -> React.createElement()
-const jsxheading = <h1 className='heading'>hello react</h1>;
-console.log(jsxheading);
+// React functional component
+const Title = () => (
+    <h2 className='title'>this is a title</h2>
+);
+// component composition
+const HeadingComponent = () => (
+    <div id='container'>
+        {Title()}
+        {heading}
+        <h1 className='heading'>hello react functional component</h1>
+    </div>
+);
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(heading);
-root.render(jsxheading);
+root.render(<HeadingComponent />);

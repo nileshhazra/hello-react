@@ -105,3 +105,35 @@ const heading = React.createElement('h1', { id: 'heading' }, 'hello react');
 //after
 const jsxheading = <h1 id='heading'>hello react</h1>;
 ```
+
+
+```javascript
+
+// React Element
+const heading = <h1 className='heading'>hello react</h1>;
+
+// React functional component
+const HeadingComponent = () => {
+    return <h1>hello react functional component</h1>;
+OR
+const HeadingComponent = () => (
+  <h1>hello react functional component</h1>
+);
+```
+
+**JSX sanitises the code before running it  - {javascript-code}**
+```javascript
+const Title = () => (
+    <h2 className='title'>this is a title</h2>
+);
+// component composition
+const HeadingComponent = () => (
+    <div id='container'>
+        {Title()}
+        {heading}
+        <h1 className='heading'>hello react functional component</h1>
+    </div>
+);
+
+```
+
