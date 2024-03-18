@@ -15,6 +15,31 @@ npm i react
 npm i react-dom
 ```
 
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+const parent = React.createElement('div', { id: 'parent' }, [
+  React.createElement('div', { key: '1' }, [
+    React.createElement('h1', { key: '2' }, 'Learning React!'),
+    React.createElement('h2', { key: '3' }, 'Heading 2'),
+  ]),
+  React.createElement('div', { key: '4' }, [
+    React.createElement('h3', { key: '5' }, 'Heading 3'),
+    React.createElement('h4', { key: '6' }, 'Heading 4'),
+  ]),
+  React.createElement('div', { key: '7' }, [
+    React.createElement('h5', { key: '8' }, 'Heading 5'),
+    React.createElement('h6', { key: '9' }, 'Heading 6'),
+  ]),
+]);
+
+console.log(parent);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(parent);
+```
+
 **package.json**
 dependencies : <version>
 
@@ -33,7 +58,9 @@ npx parcel index.html
 ```
 
 ## Parcel
-features of parcel : 
+
+features of parcel :
+
 - dev build
 - local dev server
 - HMR - hot module replacement
@@ -54,13 +81,27 @@ features of parcel :
 ```
 npx parcel build index.html
 ```
-NOTE : remove ```main:App.js;``` from package.json when building for production.
+
+NOTE : remove `main:App.js;` from package.json when building for production.
 
 ## Browserslist
 
 configure compatibility for specific browsers, locations, etc
+
 ```javascript
   "browserslist":[
     "last 2 versions"
   ]
-  ```
+```
+
+# JSX
+
+JSX, or JavaScript XML, is an extension of the JavaScript language that lets you write HTML-like markup inside a JavaScript file. It uses an XML-like syntax to create Document Object Model trees, and is intended to be transformed into valid JavaScript. JSX is based on ES6.
+
+```javascript
+//before
+const heading = React.createElement('h1', { id: 'heading' }, 'hello react');
+
+//after
+const jsxheading = <h1 id='heading'>hello react</h1>;
+```
